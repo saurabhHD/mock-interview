@@ -1,4 +1,5 @@
 let questions = [];
+let answeredQuestions = [];
 let currentQuestionIndex = 0;
 let mediaStream;
 
@@ -9,6 +10,7 @@ function getQuestionsFromLocalStorage() {
     questions = JSON.parse(storedQuestions);
     displayQuestion();
     initializeCamera();
+    updateProgressBar();
   } else {
     alert('No questions found. Please enter questions first.');
     window.location.href = 'index.html';
@@ -18,6 +20,11 @@ function getQuestionsFromLocalStorage() {
 // Function to display a question
 function displayQuestion() {
   if (questions.length > 0) {
+    let randomIndex = Math.floor(Math.random() * questions.length);
+    while (answeredQuestions.includes(randomIndex)) {
+      randomIndex = Math.floor(Math.random() * questions.length);
+    }
+    currentQuestionIndex = randomIndex;
     const questionText = document.getElementById('question-text');
     questionText.textContent = questions[currentQuestionIndex];
     readQuestion();
@@ -49,8 +56,20 @@ async function initializeCamera() {
 
 // Function to move to the next question
 function nextQuestion() {
-  currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+  if (answeredQuestions.length === questions.length) {
+    alert('Interview completed!');
+    return;
+  }
+  answeredQuestions.push(currentQuestionIndex);
   displayQuestion();
+  updateProgressBar();
+}
+
+// Function to update progress bar
+function updateProgressBar() {
+  const progress = document.getElementById('progress');
+  const percentage = (answeredQuestions.length / questions.length) * 100;
+  progress.style.width = `${percentage}%`;
 }
 
 // Event listener for the "Next Question" button
