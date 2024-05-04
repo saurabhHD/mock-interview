@@ -5,65 +5,76 @@ body {
 }
 
 .container {
-  max-width: 800px;
-  margin: 3px auto;
-  padding: 8px;
+  max-width: 720px; /* Reduced to 90% */
+  margin: 18px auto; /* Reduced to 90% */
+  padding: 18px; /* Reduced to 90% */
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
 }
 
 .title {
-  margin-bottom: 10px;
+  margin-bottom: 18px; /* Reduced to 90% */
 }
 
 #question-container {
-  margin-bottom: 10px;
+  margin-bottom: 18px; /* Reduced to 90% */
 }
 
 #question-text {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 21.6px; /* Reduced to 90% */
+  margin-bottom: 18px; /* Reduced to 90% */
 }
 
 #video-container {
-  margin-bottom: 20px;
+  margin-bottom: 18px; /* Reduced to 90% */
 }
 
 #next-btn {
-  padding: 10px 20px;
-  border: none;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#next-btn:hover {
-  background-color: #0056b3;
-}
-
-#next-btn:active {
-  background-color: #003d80;
+  padding: 9px 18px; /* Reduced to 90% */
+  font-size: 16px; /* Reduced to 90% */
 }
 
 #progress-bar-container {
-  margin-top: 20px;
+  margin-top: 18px; /* Reduced to 90% */
 }
 
 #progress-bar {
-  width: 100%;
+  width: 90%; /* Reduced to 90% */
   background-color: #ddd;
-  margin-bottom: 10px;
+  margin-bottom: 9px; /* Reduced to 90% */
 }
 
 #progress {
   width: 0;
-  height: 20px;
+  height: 18px; /* Reduced to 90% */
   background-color: #007bff;
 }
 
 #progress-label {
-  margin-top: 5px;
-  font-size: 14px;
+  margin-top: 4.5px; /* Reduced to 90% */
+  font-size: 12.6px; /* Reduced to 90% */
+}
+
+/* Styling for question input section in index.html */
+.question-input {
+  margin-bottom: 18px; /* Reduced to 90% */
+}
+
+.question-input textarea {
+  width: 100%;
+  padding: 9px; /* Reduced to 90% */
+  margin-bottom: 9px; /* Reduced to 90% */
+}
+
+.question-input button {
+  padding: 9px 18px; /* Reduced to 90% */
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.question-input button:hover {
+  background-color: #0056b3;
 }
